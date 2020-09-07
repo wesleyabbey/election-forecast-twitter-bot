@@ -12,6 +12,16 @@ Description: >-
 Transform:
   - AWS::Serverless-2016-10-31
 
+Parameters:
+  TWITTER_FORECAST_API_KEY:
+    Type: String
+  TWITTER_FORECAST_API_SECRET_KEY:
+    Type: String
+  TWITTER_FORECAST_ACCESS_TOKEN:
+    Type: String
+  TWITTER_FORECAST_ACCESS_TOKEN_SECRET:
+    Type: String
+
 # Resources declares the AWS resources that you want to include in the stack
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
 Resources:
