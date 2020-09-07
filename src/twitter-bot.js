@@ -34,7 +34,7 @@ const execute = async (event, context) => {
           body += d
         })
 
-        res.on('end', () => {
+        res.on('end', async () => {
           const data = body.toString('utf8')
           const rows = data.split('\n')
           if (data.length <= 1) {
@@ -88,7 +88,7 @@ const execute = async (event, context) => {
             access_token_secret: process.env.TwitterForecastAccessTokenSecret,
           })
 
-          client.post(
+          const post = await client.post(
             'statuses/update',
             { status },
             (error, tweet, response) => {
@@ -97,10 +97,9 @@ const execute = async (event, context) => {
                 throw error
               }
               console.info('Posting tweet: ', tweet) // Tweet body.
+              resolve(res.statusCode)
             }
           )
-
-          resolve(res.statusCode)
         })
       })
       .on('error', (e) => {
