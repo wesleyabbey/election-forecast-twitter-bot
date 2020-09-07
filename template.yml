@@ -13,13 +13,13 @@ Transform:
   - AWS::Serverless-2016-10-31
 
 Parameters:
-  TWITTER_FORECAST_API_KEY:
+  TwitterForecastApiKey:
     Type: String
-  TWITTER_FORECAST_API_SECRET_KEY:
+  TwitterForecastApiSecretKey:
     Type: String
-  TWITTER_FORECAST_ACCESS_TOKEN:
+  TwitterForecastAccessToken:
     Type: String
-  TWITTER_FORECAST_ACCESS_TOKEN_SECRET:
+  TwitterForecastAccessTokenSecret:
     Type: String
 
 # Resources declares the AWS resources that you want to include in the stack

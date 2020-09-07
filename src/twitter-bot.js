@@ -27,6 +27,8 @@ const execute = async (event, context) => {
   const electionForecasts2020 =
     'https://projects.fivethirtyeight.com/2020-general-data/presidential_national_toplines_2020.csv'
 
+  console.log('Starting execution.')
+
   https
     .get(electionForecasts2020, (res) => {
       res.on('data', (d) => {
@@ -81,10 +83,10 @@ const execute = async (event, context) => {
         console.log('Status length: ', status.length)
 
         const client = new Twitter({
-          consumer_key: process.env.TWITTER_FORECAST_API_KEY,
-          consumer_secret: process.env.TWITTER_FORECAST_API_SECRET_KEY,
-          access_token_key: process.env.TWITTER_FORECAST_ACCESS_TOKEN,
-          access_token_secret: process.env.TWITTER_FORECAST_ACCESS_TOKEN_SECRET,
+          consumer_key: process.env.TwitterForecastApiKey,
+          consumer_secret: process.env.TwitterForecastApiSecretKey,
+          access_token_key: process.env.TwitterForecastAccessToken,
+          access_token_secret: process.env.TwitterForecastAccessTokenSecret,
         })
 
         client.post('statuses/update', { status }, (error, tweet, response) => {
