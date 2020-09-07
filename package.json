@@ -1,0 +1,13 @@
+{
+  "name": "election-forecast-twitter-bot",
+  "description": "replaced-by-user-input",
+  "version": "0.0.1",
+  "dependencies": {
+    "date-fns": "^2.16.1",
+    "twitter": "^1.7.1"
+  },
+  "scripts": {
+    "build": "sam build",
+    "deploy": "sam deploy"
+  }
+}
