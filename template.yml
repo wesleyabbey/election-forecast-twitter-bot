@@ -33,6 +33,13 @@ Resources:
       Description: A Lambda function that logs the payload of messages sent to an associated SQS queue.
       Runtime: nodejs12.x
       Handler: src/twitter-bot.handler
+      Environment:
+        Variables:
+          NODE_ENV: 'production'
+          TwitterForecastApiKey: !Ref TwitterForecastApiKey
+          TwitterForecastApiSecretKey: !Ref TwitterForecastApiSecretKey
+          TwitterForecastAccessToken: !Ref TwitterForecastAccessToken
+          TwitterForecastAccessTokenSecret: !Ref TwitterForecastAccessTokenSecret
       # This property associates this Lambda function with a scheduled CloudWatch Event. For all available properties, see
       # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#schedule
       # This example runs every hour.
